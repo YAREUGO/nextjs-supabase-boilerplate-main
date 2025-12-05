@@ -80,13 +80,15 @@ export async function createClient() {
         }
       },
     },
-    // Clerk 토큰을 accessToken 옵션으로 전달
-    // Server Component에서는 onAuthStateChange를 사용하지 않으므로 문제 없음
-    ...(clerkToken && {
-      accessToken: async () => {
-        return clerkToken;
-      },
-    }),
+    // accessToken 옵션 대신 global.headers 사용 (onAuthStateChange 에러 방지)
+    // Server Component에서는 onAuthStateChange를 사용하지 않으므로 global.headers가 더 안전
+    global: {
+      headers: clerkToken
+        ? {
+            Authorization: `Bearer ${clerkToken}`,
+          }
+        : {},
+    },
     // auth 옵션으로 세션 관리 비활성화 (onAuthStateChange 에러 방지)
     auth: {
       autoRefreshToken: false,

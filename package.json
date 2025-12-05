@@ -1,6 +1,6 @@
 {
-  "name": "saas-mini-course",
-  "version": "0.1.0",
+  "name": "shopping-mall-mvp",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -23,6 +23,7 @@
     "@radix-ui/react-slot": "^1.2.3",
     "@supabase/ssr": "^0.8.0",
     "@supabase/supabase-js": "^2.49.8",
+    "@tosspayments/payment-widget-sdk": "^0.12.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.511.0",

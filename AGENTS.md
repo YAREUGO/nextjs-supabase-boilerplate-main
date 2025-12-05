@@ -132,7 +132,7 @@ supabase/migrations/20241030014800_create_users_table.sql
 
 ## Environment Variables
 
-`.env.example` 참고하여 `.env` 파일 생성:
+`.env` 또는 `.env.local` 파일에 다음 환경 변수를 설정하세요:
 
 ```bash
 # Clerk Authentication
@@ -147,7 +147,15 @@ NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
 NEXT_PUBLIC_STORAGE_BUCKET=uploads
+
+# Toss Payments (테스트 모드)
+NEXT_PUBLIC_TOSS_CLIENT_KEY=test_ck_D5GePWvyJnrK0W0k6q8gLzN97Eoq
 ```
+
+**참고**: 
+- Toss Payments 클라이언트 키가 설정되지 않은 경우 기본 테스트 키가 사용됩니다.
+- 프로덕션 배포 시에는 Toss Payments 대시보드에서 발급받은 실제 키를 사용하세요.
+- 자세한 설정 방법은 `docs/toss-payments-setup.md`를 참고하세요.
 
 ## Development Guidelines
 

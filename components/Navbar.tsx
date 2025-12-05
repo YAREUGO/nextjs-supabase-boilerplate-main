@@ -2,7 +2,7 @@ import { SignedOut, SignInButton, SignedIn, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Pyramid, Crown } from "lucide-react";
+import { Pyramid, Crown, ShoppingBag } from "lucide-react";
 
 /**
  * 네비게이션 바 컴포넌트
@@ -24,9 +24,38 @@ const Navbar = () => {
       >
         <Pyramid className="w-6 h-6 text-amber-600 dark:text-amber-400" />
         <span className="bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
-          SaaS Template
+          쇼핑몰
         </span>
       </Link>
+      <nav className="flex gap-4 items-center">
+        <Link href="/products">
+          <Button
+            variant="ghost"
+            className="text-amber-900 dark:text-amber-200 hover:text-amber-700 dark:hover:text-amber-300"
+          >
+            상품
+          </Button>
+        </Link>
+        <SignedIn>
+          <Link href="/cart">
+            <Button
+              variant="ghost"
+              className="text-amber-900 dark:text-amber-200 hover:text-amber-700 dark:hover:text-amber-300"
+            >
+              <ShoppingBag className="w-4 h-4 mr-2" />
+              장바구니
+            </Button>
+          </Link>
+          <Link href="/mypage">
+            <Button
+              variant="ghost"
+              className="text-amber-900 dark:text-amber-200 hover:text-amber-700 dark:hover:text-amber-300"
+            >
+              마이페이지
+            </Button>
+          </Link>
+        </SignedIn>
+      </nav>
       <div className="flex gap-4 items-center">
         <SignedOut>
           <SignInButton mode="modal">
