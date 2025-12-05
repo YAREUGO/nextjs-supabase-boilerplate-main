@@ -555,4 +555,5 @@ saas-template/
 - [shadcn/ui 문서](https://ui.shadcn.com/)
 - [Tailwind CSS v4 문서](https://tailwindcss.com/docs)
 #   n e x t j s - s u p a b a s e - b o i l e r p l a t e - m a i n - 1  
+ #   n e x t j s - s u p a b a s e - b o i l e r p l a t e - m a i n - 1  
  
