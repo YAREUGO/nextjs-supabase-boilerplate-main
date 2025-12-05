@@ -44,7 +44,7 @@ function getSupabaseClient() {
   try {
     const { supabaseUrl, supabaseAnonKey } = validateSupabaseConfig();
     return createClient(supabaseUrl, supabaseAnonKey);
-  } catch (_error) {
+  } catch {
     // 빌드 시 환경 변수가 없어도 빌드가 실패하지 않도록 더미 클라이언트 반환
     if (process.env.NODE_ENV === "production") {
       console.warn(
