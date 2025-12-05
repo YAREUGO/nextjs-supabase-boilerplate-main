@@ -281,6 +281,19 @@ cp .env.example .env
 > - `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`와 `CLERK_SECRET_KEY`는 Clerk Dashboard의 API Keys에서 찾을 수 있습니다.
 > - `NEXT_PUBLIC_CLERK_SIGN_IN_URL` 등은 프로젝트에서 사용할 페이지 경로를 직접 입력하는 값입니다 (Clerk Dashboard에서 찾을 필요 없음).
 
+**6-5. Toss Payments 환경 변수 설정**
+
+1. `.env` 파일에 다음 환경 변수를 추가:
+   ```env
+   # Toss Payments 클라이언트 키 (테스트 모드)
+   NEXT_PUBLIC_TOSS_CLIENT_KEY="test_ck_D5GePWvyJnrK0W0k6q8gLzN97Eoq"
+   ```
+
+> **⚠️ 주의**: 
+> - 테스트 모드에서는 위의 테스트 키를 사용합니다.
+> - 프로덕션 배포 시에는 [Toss Payments 대시보드](https://developers.tosspayments.com/)에서 발급받은 실제 클라이언트 키를 사용하세요.
+> - 자세한 설정 방법은 `docs/toss-payments-setup.md`를 참고하세요.
+
 #### 7. Cursor MCP 설정 (선택사항)
 
 > Cursor AI를 사용하는 경우, Supabase MCP 서버를 설정하면 AI가 데이터베이스를 직접 조회하고 관리할 수 있습니다.
@@ -541,3 +554,5 @@ saas-template/
 - [Supabase 문서](https://supabase.com/docs)
 - [shadcn/ui 문서](https://ui.shadcn.com/)
 - [Tailwind CSS v4 문서](https://tailwindcss.com/docs)
+#   n e x t j s - s u p a b a s e - b o i l e r p l a t e - m a i n - 1  
+ 
